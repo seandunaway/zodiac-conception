@@ -32,82 +32,82 @@ p {
 		{
 			sign: 'aries',
 			symbol: '♈︎',
-			begin: new Date('3/21'),
-			end: new Date('4/20'),
+			begin: new Date('3/21/2000'),
+			end: new Date('4/20/2000'),
 		},
 		{
 			sign: 'taurus',
 			symbol: '♉︎',
-			begin: new Date('4/20'),
-			end: new Date('5/21'),
+			begin: new Date('4/20/2000'),
+			end: new Date('5/21/2000'),
 		},
 		{
 			sign: 'gemini',
 			symbol: '♊︎',
-			begin: new Date('5/21'),
-			end: new Date('6/21'),
+			begin: new Date('5/21/2000'),
+			end: new Date('6/21/2000'),
 		},
 		{
 			sign: 'cancer',
 			symbol: '♋︎',
-			begin: new Date('6/21'),
-			end: new Date('7/23'),
+			begin: new Date('6/21/2000'),
+			end: new Date('7/23/2000'),
 		},
 		{
 			sign: 'leo',
 			symbol: '♌︎',
-			begin: new Date('7/23'),
-			end: new Date('8/23'),
+			begin: new Date('7/23/2000'),
+			end: new Date('8/23/2000'),
 		},
 		{
 			sign: 'virgo',
 			symbol: '♍︎',
-			begin: new Date('8/23'),
-			end: new Date('9/23'),
+			begin: new Date('8/23/2000'),
+			end: new Date('9/23/2000'),
 		},
 		{
 			sign: 'libra',
 			symbol: '♎︎',
-			begin: new Date('9/23'),
-			end: new Date('10/23'),
+			begin: new Date('9/23/2000'),
+			end: new Date('10/23/2000'),
 		},
 		{
 			sign: 'scorpio',
 			symbol: '♏︎',
-			begin: new Date('10/23'),
-			end: new Date('11/22'),
+			begin: new Date('10/23/2000'),
+			end: new Date('11/22/2000'),
 		},
 		{
 			sign: 'sagittarius',
 			symbol: '♐︎',
-			begin: new Date('11/23'),
-			end: new Date('12/22'),
+			begin: new Date('11/23/2000'),
+			end: new Date('12/22/2000'),
 		},
 		{
 			sign: 'capricorn',
 			symbol: '♑︎',
-			begin: new Date('12/22'),
-			end: new Date('1/20'),
+			begin: new Date('12/22/2000'),
+			end: new Date('1/20/2000'),
 		},
 		{
 			sign: 'aquarius',
 			symbol: '♒︎',
-			begin: new Date('1/20'),
-			end: new Date('2/19'),
+			begin: new Date('1/20/2000'),
+			end: new Date('2/19/2000'),
 		},
 		{
 			sign: 'pisces',
 			symbol: '♓︎',
-			begin: new Date('2/19'),
-			end: new Date('3/21'),
+			begin: new Date('2/19/2000'),
+			end: new Date('3/21/2000'),
 		},
 	]
 
 	// https://www.ncbi.nlm.nih.gov/books/NBK536986
 	let conception = new Date()
-	conception.setFullYear('2000')
 	let birthday = new Date(conception)
 	birthday.setDate(conception.getDate() + 266)
+	birthday.setFullYear(2000)
 
 	for (let item of zodiac) {
 		if (birthday < item.begin || birthday > item.end) {
