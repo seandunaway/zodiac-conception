@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<title>zodiac conception</title>
+<style>
+body {
+	background-image: url(./galaxy.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0;
+	height: 100vh;
+	width: 100vw;
+}
+p {
+	background-color: rgba(0, 0, 0, 0.66);
+	border-radius: 10%;
+	color: rgb(192, 192, 192);
+	cursor: default;
+	font-size: 10rem;
+	margin: 0;
+	padding: 2rem 4rem;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+</style>
+<script type='module'>
+	let p = document.querySelector('p')
+
+	// https://en.wikipedia.org/wiki/Zodiac
+	let zodiac = [
+		{
+			sign: 'aries',
+			symbol: '♈︎',
+			begin: new Date('3/21'),
+			end: new Date('4/20'),
+		},
+		{
+			sign: 'taurus',
+			symbol: '♉︎',
+			begin: new Date('4/20'),
+			end: new Date('5/21'),
+		},
+		{
+			sign: 'gemini',
+			symbol: '♊︎',
+			begin: new Date('5/21'),
+			end: new Date('6/21'),
+		},
+		{
+			sign: 'cancer',
+			symbol: '♋︎',
+			begin: new Date('6/21'),
+			end: new Date('7/23'),
+		},
+		{
+			sign: 'leo',
+			symbol: '♌︎',
+			begin: new Date('7/23'),
+			end: new Date('8/23'),
+		},
+		{
+			sign: 'virgo',
+			symbol: '♍︎',
+			begin: new Date('8/23'),
+			end: new Date('9/23'),
+		},
+		{
+			sign: 'libra',
+			symbol: '♎︎',
+			begin: new Date('9/23'),
+			end: new Date('10/23'),
+		},
+		{
+			sign: 'scorpio',
+			symbol: '♏︎',
+			begin: new Date('10/23'),
+			end: new Date('11/22'),
+		},
+		{
+			sign: 'sagittarius',
+			symbol: '♐︎',
+			begin: new Date('11/23'),
+			end: new Date('12/22'),
+		},
+		{
+			sign: 'capricorn',
+			symbol: '♑︎',
+			begin: new Date('12/22'),
+			end: new Date('1/20'),
+		},
+		{
+			sign: 'aquarius',
+			symbol: '♒︎',
+			begin: new Date('1/20'),
+			end: new Date('2/19'),
+		},
+		{
+			sign: 'pisces',
+			symbol: '♓︎',
+			begin: new Date('2/19'),
+			end: new Date('3/21'),
+		},
+	]
+
+	// https://www.ncbi.nlm.nih.gov/books/NBK536986
+	let conception = new Date()
+	conception.setFullYear('2000')
+	let birthday = new Date(conception)
+	birthday.setDate(conception.getDate() + 266)
+
+	for (let item of zodiac) {
+		if (birthday < item.begin || birthday > item.end) {
+			continue
+		}
+		p.textContent = item.symbol
+		p.title = item.sign
+		console.info(item)
+	}
+</script>
+<p></p>
